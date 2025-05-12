@@ -6,8 +6,7 @@ blocks:
       path: unit_2_training/global_data_products/training_set.py
     global_data_product:
       uuid: training_set
-  downstream_blocks:
-  - load_models
+  downstream_blocks: []
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -49,11 +48,10 @@ blocks:
   language: python
   name: Load models
   retry_config: null
-  status: updated
+  status: executed
   timeout: null
   type: custom
-  upstream_blocks:
-  - training_set
+  upstream_blocks: []
   uuid: load_models
 cache_block_output_in_memory: false
 callbacks: []
@@ -78,5 +76,8 @@ spark_config: {}
 tags: []
 type: python
 uuid: sklearn_training
+variables:
+  max_evaluations: 50
+  random_state: 7
 variables_dir: /home/codespace/.mage_data/unit_2_training
 widgets: []
