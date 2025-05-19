@@ -50,8 +50,8 @@ def train_model(
     if X_val is not None and y_val is not None:
         y_pred = model.predict(X_val)
 
-        rmse = eval_metric(y_val, y_pred, squared=False)
-        mse = eval_metric(y_val, y_pred, squared=True)
+        mse = eval_metric(y_val, y_pred)
+        rmse = np.sqrt(mse)
         metrics = dict(mse=mse, rmse=rmse)
 
     return model, metrics, y_pred
