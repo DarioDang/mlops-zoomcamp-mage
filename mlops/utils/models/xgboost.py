@@ -64,8 +64,8 @@ def train_model(
     y_pred = model.predict(validation_set)
 
     y_val = validation_set.get_label()  # Corrected to extract labels from DMatrix
-    rmse = mean_squared_error(y_val, y_pred, squared=False)
-    mse = mean_squared_error(y_val, y_pred, squared=True)
+    mse = mean_squared_error(y_val, y_pred)
+    rmse = np.sqrt(mse)
 
     return model, dict(mse=mse, rmse=rmse), y_pred
 
